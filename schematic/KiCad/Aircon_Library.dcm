@@ -1,0 +1,31 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 1SS272
+F https://toshiba.semicon-storage.com/jp/semiconductor/product/diodes/detail.1SS272.html
+$ENDCMP
+#
+$CMP BA05FP
+D IC REG LINEAR 5V 1A TO252
+K Voltage Regulator 1A Positive
+F https://media.digikey.com/pdf/Data%20Sheets/Rohm%20PDFs/BAxxT,BAxxFP_10-22-99.pdf
+$ENDCMP
+#
+$CMP COM-18357
+F https://www.sparkfun.com/products/18357
+$ENDCMP
+#
+$CMP LA6393M
+D Dual General-Purpose Low-Voltage Comparator, SOIC-8/TSSOP-8/VSSOP-8
+K cmp open collector
+F https://www.alldatasheet.jp/datasheet-pdf/pdf/439153/SANYO/LA6393M.html
+$ENDCMP
+#
+$CMP PST597JNR
+F https://www.mitsumi.co.jp/latest/Catalog/pdf/micro_pst_596.pdf
+$ENDCMP
+#
+$CMP Stamp-Pico
+F https://docs.m5stack.com/en/core/stamp_pico
+$ENDCMP
+#
+#End Doc Library

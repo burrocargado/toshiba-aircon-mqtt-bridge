@@ -1,0 +1,631 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr User 7874 5906
+encoding utf-8
+Sheet 3 3
+Title "Wireless Controller"
+Date "2022-07-03"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:Q_PNP_BCE Q1
+U 1 1 62DAB221
+P 4250 1600
+F 0 "Q1" V 4250 1850 50  0000 C CNN
+F 1 "2SB1689" V 4150 1950 50  0000 C CNN
+F 2 "" H 4450 1700 50  0001 C CNN
+F 3 "https://fscdn.rohm.com/jp/products/databook/datasheet/discrete/transistor/bipolar/2sb1689t106-j.pdf" H 4250 1600 50  0001 C CNN
+	1    4250 1600
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	3550 2450 3650 2450
+$Comp
+L Device:Q_PNP_BCE Q2
+U 1 1 62DAFD07
+P 4250 2100
+F 0 "Q2" V 4250 2350 50  0000 C CNN
+F 1 "2SB1689" V 4150 2450 50  0000 C CNN
+F 2 "" H 4450 2200 50  0001 C CNN
+F 3 "https://fscdn.rohm.com/jp/products/databook/datasheet/discrete/transistor/bipolar/2sb1689t106-j.pdf" H 4250 2100 50  0001 C CNN
+	1    4250 2100
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	4250 1800 4250 2300
+$Comp
+L Device:R R3
+U 1 1 62DB17D4
+P 3800 1500
+F 0 "R3" V 3593 1500 50  0000 C CNN
+F 1 "3.0" V 3684 1500 50  0000 C CNN
+F 2 "" V 3730 1500 50  0001 C CNN
+F 3 "~" H 3800 1500 50  0001 C CNN
+	1    3800 1500
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 62DB1D62
+P 3800 2000
+F 0 "R4" V 3593 2000 50  0000 C CNN
+F 1 "3.0" V 3684 2000 50  0000 C CNN
+F 2 "" V 3730 2000 50  0001 C CNN
+F 3 "~" H 3800 2000 50  0001 C CNN
+	1    3800 2000
+	0    1    1    0   
+$EndComp
+Connection ~ 4250 2300
+Wire Wire Line
+	4250 2300 4250 2450
+$Comp
+L Device:R R1
+U 1 1 62DB6BE6
+P 3400 1500
+F 0 "R1" V 3193 1500 50  0000 C CNN
+F 1 "5.1" V 3284 1500 50  0000 C CNN
+F 2 "" V 3330 1500 50  0001 C CNN
+F 3 "~" H 3400 1500 50  0001 C CNN
+	1    3400 1500
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 62DB6E15
+P 3400 2000
+F 0 "R2" V 3193 2000 50  0000 C CNN
+F 1 "5.1" V 3284 2000 50  0000 C CNN
+F 2 "" V 3330 2000 50  0001 C CNN
+F 3 "~" H 3400 2000 50  0001 C CNN
+	1    3400 2000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3550 1500 3650 1500
+Wire Wire Line
+	3550 2000 3650 2000
+Wire Wire Line
+	3950 1500 4050 1500
+Wire Wire Line
+	3950 2000 4050 2000
+Wire Wire Line
+	3150 1500 3150 2000
+Wire Wire Line
+	3150 2000 3250 2000
+Connection ~ 3150 2000
+Wire Wire Line
+	3150 2000 3150 2450
+Wire Wire Line
+	3150 1500 3250 1500
+Wire Wire Line
+	3950 2450 4250 2450
+Wire Wire Line
+	3150 2450 3250 2450
+$Comp
+L Device:R R6
+U 1 1 62DB8C5C
+P 4250 2700
+F 0 "R6" H 4450 2650 50  0000 R CNN
+F 1 "1k" H 4450 2750 50  0000 R CNN
+F 2 "" V 4180 2700 50  0001 C CNN
+F 3 "~" H 4250 2700 50  0001 C CNN
+	1    4250 2700
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4250 2550 4250 2450
+Connection ~ 4250 2450
+$Comp
+L power:GND #PWR04
+U 1 1 62DB958D
+P 4250 2950
+F 0 "#PWR04" H 4250 2700 50  0001 C CNN
+F 1 "GND" H 4255 2777 50  0001 C CNN
+F 2 "" H 4250 2950 50  0001 C CNN
+F 3 "" H 4250 2950 50  0001 C CNN
+	1    4250 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4250 2950 4250 2850
+$Comp
+L Isolator:TLP291 U3
+U 1 1 62DB9FC0
+P 5600 2100
+F 0 "U3" H 5600 2425 50  0000 C CNN
+F 1 "TLP291" H 5600 2334 50  0000 C CNN
+F 2 "Package_SO:SOIC-4_4.55x2.6mm_P1.27mm" H 5400 1900 50  0001 L CIN
+F 3 "https://toshiba.semicon-storage.com/info/docget.jsp?did=12884&prodName=TLP291" H 5600 2100 50  0001 L CNN
+	1    5600 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Isolator:TLP291 U2
+U 1 1 62DBAC62
+P 5600 1400
+F 0 "U2" H 5600 1083 50  0000 C CNN
+F 1 "TLP291" H 5600 1174 50  0000 C CNN
+F 2 "Package_SO:SOIC-4_4.55x2.6mm_P1.27mm" H 5400 1200 50  0001 L CIN
+F 3 "https://toshiba.semicon-storage.com/info/docget.jsp?did=12884&prodName=TLP291" H 5600 1400 50  0001 L CNN
+	1    5600 1400
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R9
+U 1 1 62DBCA22
+P 6200 1500
+F 0 "R9" V 6407 1500 50  0000 C CNN
+F 1 "1k" V 6316 1500 50  0000 C CNN
+F 2 "" V 6130 1500 50  0001 C CNN
+F 3 "~" H 6200 1500 50  0001 C CNN
+	1    6200 1500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R10
+U 1 1 62DBCF0C
+P 6200 2000
+F 0 "R10" V 6407 2000 50  0000 C CNN
+F 1 "4.7k" V 6316 2000 50  0000 C CNN
+F 2 "" V 6130 2000 50  0001 C CNN
+F 3 "~" H 6200 2000 50  0001 C CNN
+	1    6200 2000
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5900 2000 6000 2000
+Wire Wire Line
+	5900 1500 6050 1500
+Wire Wire Line
+	6050 2300 6000 2300
+Wire Wire Line
+	6000 2300 6000 2000
+Connection ~ 6000 2000
+Wire Wire Line
+	6000 2000 6050 2000
+$Comp
+L power:GND #PWR08
+U 1 1 62DBF8DA
+P 5900 2300
+F 0 "#PWR08" H 5900 2050 50  0001 C CNN
+F 1 "GND" H 5905 2127 50  0001 C CNN
+F 2 "" H 5900 2300 50  0001 C CNN
+F 3 "" H 5900 2300 50  0001 C CNN
+	1    5900 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6350 1500 6450 1500
+Wire Wire Line
+	6350 2000 6450 2000
+Wire Wire Line
+	6350 2300 6700 2300
+$Comp
+L Device:R R8
+U 1 1 62DC1357
+P 5250 2400
+F 0 "R8" H 5180 2354 50  0000 R CNN
+F 1 "1k" H 5180 2445 50  0000 R CNN
+F 2 "" V 5180 2400 50  0001 C CNN
+F 3 "~" H 5250 2400 50  0001 C CNN
+	1    5250 2400
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R7
+U 1 1 62DC2337
+P 5050 1500
+F 0 "R7" V 5257 1500 50  0000 C CNN
+F 1 "4.7k" V 5166 1500 50  0000 C CNN
+F 2 "" V 4980 1500 50  0001 C CNN
+F 3 "~" H 5050 1500 50  0001 C CNN
+	1    5050 1500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR07
+U 1 1 62DC3E6C
+P 5250 1200
+F 0 "#PWR07" H 5250 950 50  0001 C CNN
+F 1 "GND" H 5255 1027 50  0001 C CNN
+F 2 "" H 5250 1200 50  0001 C CNN
+F 3 "" H 5250 1200 50  0001 C CNN
+	1    5250 1200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5250 1200 5250 1300
+Wire Wire Line
+	5900 2300 5900 2200
+$Comp
+L power:GND #PWR05
+U 1 1 62DD0970
+P 4450 2950
+F 0 "#PWR05" H 4450 2700 50  0001 C CNN
+F 1 "GND" H 4455 2777 50  0001 C CNN
+F 2 "" H 4450 2950 50  0001 C CNN
+F 3 "" H 4450 2950 50  0001 C CNN
+	1    4450 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5150 2000 5150 2600
+Wire Wire Line
+	5250 1500 5250 1700
+Text HLabel 6700 1200 2    50   Input ~ 0
+RC_RX
+Text HLabel 6700 2300 2    50   Input ~ 0
+RC_TX
+Wire Wire Line
+	6450 1500 6450 1750
+Text HLabel 6700 1750 2    50   Input ~ 0
+RC_VCC
+Wire Wire Line
+	6450 1750 6700 1750
+Connection ~ 6450 1750
+Wire Wire Line
+	6450 1750 6450 2000
+Connection ~ 5250 1500
+Wire Wire Line
+	5250 1500 5300 1500
+Wire Wire Line
+	5200 1500 5250 1500
+Connection ~ 4850 2000
+Wire Wire Line
+	4450 2000 4850 2000
+Connection ~ 4850 1500
+Wire Wire Line
+	4850 1500 4900 1500
+Wire Wire Line
+	5250 1300 5300 1300
+Wire Wire Line
+	5250 2200 5300 2200
+Wire Wire Line
+	5250 1700 5600 1700
+Wire Wire Line
+	4450 1500 4850 1500
+Wire Notes Line
+	3050 1000 3050 3100
+Wire Notes Line
+	3050 3100 6600 3100
+Wire Notes Line
+	6600 3100 6600 1000
+Wire Notes Line
+	6600 1000 3050 1000
+Wire Wire Line
+	5250 2600 5600 2600
+Wire Wire Line
+	5100 2800 5600 2800
+Wire Wire Line
+	4850 1500 4850 2000
+Connection ~ 5150 2000
+Wire Wire Line
+	5150 2000 5300 2000
+Wire Wire Line
+	4850 2000 5150 2000
+Wire Wire Line
+	5100 2600 5150 2600
+$Comp
+L Aircon_Library:PST597JNR U1
+U 1 1 62DF6094
+P 4800 2700
+F 0 "U1" H 4800 3067 50  0000 C CNN
+F 1 "PST597JNR" H 4800 2976 50  0000 C CNN
+F 2 "" H 4800 2700 50  0001 C CNN
+F 3 "https://www.mitsumi.co.jp/latest/Catalog/pdf/micro_pst_596.pdf" H 4800 2700 50  0001 C CNN
+	1    4800 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4500 2600 4450 2600
+Wire Wire Line
+	4450 2600 4450 2700
+Wire Wire Line
+	4450 2700 4500 2700
+Wire Wire Line
+	4450 2700 4450 2800
+Wire Wire Line
+	4450 2800 4500 2800
+Connection ~ 4450 2700
+Wire Wire Line
+	4450 2800 4450 2950
+Connection ~ 4450 2800
+Wire Wire Line
+	5250 2200 5250 2250
+$Comp
+L Device:R R5
+U 1 1 62DFFDEF
+P 3200 3650
+F 0 "R5" V 2993 3650 50  0000 C CNN
+F 1 "47" V 3084 3650 50  0000 C CNN
+F 2 "" V 3130 3650 50  0001 C CNN
+F 3 "~" H 3200 3650 50  0001 C CNN
+	1    3200 3650
+	0    -1   -1   0   
+$EndComp
+Connection ~ 3150 2450
+$Comp
+L power:GND #PWR03
+U 1 1 62E0AC22
+P 2900 2950
+F 0 "#PWR03" H 2900 2700 50  0001 C CNN
+F 1 "GND" H 2905 2777 50  0001 C CNN
+F 2 "" H 2900 2950 50  0001 C CNN
+F 3 "" H 2900 2950 50  0001 C CNN
+	1    2900 2950
+	1    0    0    -1  
+$EndComp
+NoConn ~ 2350 2800
+Text HLabel 6700 3650 2    50   Input ~ 0
+RC_H
+Text Label 5600 1700 2    50   ~ 0
+RxD
+Text Label 5600 2600 2    50   ~ 0
+TxD
+Text Label 5600 2800 2    50   ~ 0
+~RESET
+Text Notes 6200 3050 0    50   ~ 0
+ICB-078
+$Comp
+L Aircon_Library:Stamp-Pico M1
+U 1 1 62E4601F
+P 1850 2000
+F 0 "M1" H 1850 1150 50  0000 C CNN
+F 1 "Stamp-Pico" H 1850 1250 50  0000 C CNN
+F 2 "" H 1850 2025 50  0001 C CNN
+F 3 "https://docs.m5stack.com/en/core/stamp_pico" H 1850 2025 50  0001 C CNN
+	1    1850 2000
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR01
+U 1 1 62E54787
+P 2550 1650
+F 0 "#PWR01" H 2550 1400 50  0001 C CNN
+F 1 "GND" H 2555 1477 50  0001 C CNN
+F 2 "" H 2550 1650 50  0001 C CNN
+F 3 "" H 2550 1650 50  0001 C CNN
+	1    2550 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x06_Female J1
+U 1 1 62E557B8
+P 800 1900
+F 0 "J1" H 692 1467 50  0000 C CNN
+F 1 "Conn_01x06_Female" H 692 1466 50  0001 C CNN
+F 2 "" H 800 1900 50  0001 C CNN
+F 3 "~" H 800 1900 50  0001 C CNN
+	1    800  1900
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2350 1600 2550 1600
+Wire Wire Line
+	2550 1600 2550 1650
+Text Label 1050 1800 0    50   ~ 0
+~RESET
+$Comp
+L Connector_Generic:Conn_02x02_Counter_Clockwise J2
+U 1 1 62E62E32
+P 1200 2600
+F 0 "J2" V 1250 2300 50  0000 L CNN
+F 1 "Conn_02x02_Counter_Clockwise" V 1295 2680 50  0001 L CNN
+F 2 "" H 1200 2600 50  0001 C CNN
+F 3 "~" H 1200 2600 50  0001 C CNN
+	1    1200 2600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1200 2100 1200 2400
+Wire Wire Line
+	1350 2100 1350 3000
+Wire Wire Line
+	1350 3000 1200 3000
+Wire Wire Line
+	1100 3000 1100 2900
+Wire Wire Line
+	1200 2900 1200 3000
+Connection ~ 1200 3000
+Wire Wire Line
+	1200 3000 1100 3000
+Wire Wire Line
+	1100 2400 800  2400
+Text Label 800  2400 0    50   ~ 0
+VDD_MPU
+Text Label 2650 2200 2    50   ~ 0
+TxD
+Text Label 2650 2100 2    50   ~ 0
+RxD
+Wire Wire Line
+	2650 2100 2350 2100
+Wire Wire Line
+	2350 2200 2650 2200
+NoConn ~ 1700 1350
+NoConn ~ 1800 1350
+NoConn ~ 1900 1350
+NoConn ~ 2000 1350
+NoConn ~ 2350 1700
+NoConn ~ 2350 1800
+NoConn ~ 2350 1900
+NoConn ~ 2350 2000
+NoConn ~ 2350 2300
+NoConn ~ 2350 2400
+$Comp
+L Aircon_Library:COM-18357 M2
+U 1 1 62DFEDDC
+P 2500 3150
+F 0 "M2" V 2200 3150 50  0000 C CNN
+F 1 "COM-18357" V 2100 3150 50  0000 C CNN
+F 2 "" H 2500 3150 50  0001 C CNN
+F 3 "https://www.sparkfun.com/products/18357" H 2500 3150 50  0001 C CNN
+	1    2500 3150
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2100 2700 2450 2700
+Wire Wire Line
+	2450 2700 2450 2800
+Wire Wire Line
+	2550 2700 2900 2700
+Wire Wire Line
+	2900 2700 2900 2950
+Wire Wire Line
+	2550 2700 2550 2800
+Connection ~ 5150 2600
+$Comp
+L Aircon_Library:1SS272 D1
+U 1 1 62F268AB
+P 3400 2450
+F 0 "D1" H 3400 2225 50  0000 C CNN
+F 1 "1SS272" H 3400 2316 50  0000 C CNN
+F 2 "" H 3375 3025 50  0001 C CNN
+F 3 "https://toshiba.semicon-storage.com/jp/semiconductor/product/diodes/detail.1SS272.html" H 3375 3025 50  0001 C CNN
+	1    3400 2450
+	-1   0    0    1   
+$EndComp
+$Comp
+L Aircon_Library:1SS272 D1
+U 2 1 62F279E6
+P 3800 2450
+F 0 "D1" H 3800 2225 50  0000 C CNN
+F 1 "1SS272" H 3800 2316 50  0000 C CNN
+F 2 "" H 3775 3025 50  0001 C CNN
+F 3 "https://toshiba.semicon-storage.com/jp/semiconductor/product/diodes/detail.1SS272.html" H 3775 3025 50  0001 C CNN
+	2    3800 2450
+	-1   0    0    1   
+$EndComp
+$Comp
+L Aircon_Library:1SS272 D2
+U 1 1 62F2818B
+P 6200 2300
+F 0 "D2" H 6200 2200 50  0000 C CNN
+F 1 "1SS272" H 6200 2100 50  0000 C CNN
+F 2 "" H 6175 2875 50  0001 C CNN
+F 3 "https://toshiba.semicon-storage.com/jp/semiconductor/product/diodes/detail.1SS272.html" H 6175 2875 50  0001 C CNN
+	1    6200 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2650 2450 3150 2450
+Wire Wire Line
+	2650 2450 2650 2800
+Wire Wire Line
+	5900 1300 6000 1300
+Wire Wire Line
+	6000 1300 6000 1200
+Wire Wire Line
+	6000 1200 6700 1200
+Wire Wire Line
+	1000 1600 1350 1600
+Wire Wire Line
+	1000 1700 1350 1700
+Wire Wire Line
+	1000 1800 1350 1800
+Wire Wire Line
+	1000 1900 1350 1900
+Wire Wire Line
+	1000 2000 1350 2000
+Wire Wire Line
+	1000 2100 1200 2100
+Wire Wire Line
+	5250 2550 5250 2600
+Wire Wire Line
+	6500 3400 6500 3450
+Wire Wire Line
+	6700 3400 6500 3400
+Text HLabel 6700 3400 2    50   Input ~ 0
+GND
+$Comp
+L power:GND #PWR?
+U 1 1 62F2AFED
+P 6500 3450
+F 0 "#PWR?" H 6500 3200 50  0001 C CNN
+F 1 "GND" H 6505 3277 50  0001 C CNN
+F 2 "" H 6500 3450 50  0001 C CNN
+F 3 "" H 6500 3450 50  0001 C CNN
+	1    6500 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR06
+U 1 1 62E3A77C
+P 4250 3450
+F 0 "#PWR06" H 4250 3200 50  0001 C CNN
+F 1 "GND" H 4255 3277 50  0001 C CNN
+F 2 "" H 4250 3450 50  0001 C CNN
+F 3 "" H 4250 3450 50  0001 C CNN
+	1    4250 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C2
+U 1 1 62E14F4D
+P 4700 3400
+F 0 "C2" V 4450 3400 50  0000 C CNN
+F 1 "1.5F 5.4V 195mOhm" V 4550 3400 50  0000 C CNN
+F 2 "" H 4738 3250 50  0001 C CNN
+F 3 "https://www.vinatech.com/pdf/SS_2_Serial_Module_VEC_5R4_155_QG.pdf" H 4700 3400 50  0001 C CNN
+F 4 "VEC5R4155QG-I" V 4850 3400 50  0000 C CNN "PartNumber"
+	1    4700 3400
+	0    1    1    0   
+$EndComp
+Text Label 5600 3400 2    50   ~ 0
+VDD_MPU
+Wire Wire Line
+	5150 3400 5600 3400
+Wire Wire Line
+	2100 3650 2100 2700
+$Comp
+L power:GND #PWR02
+U 1 1 62E00E22
+P 3500 3450
+F 0 "#PWR02" H 3500 3200 50  0001 C CNN
+F 1 "GND" H 3505 3277 50  0001 C CNN
+F 2 "" H 3500 3450 50  0001 C CNN
+F 3 "" H 3500 3450 50  0001 C CNN
+	1    3500 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP_Small C1
+U 1 1 62E008C1
+P 3200 3400
+F 0 "C1" V 3400 3400 50  0000 C CNN
+F 1 "220u 35V" V 3300 3400 50  0000 C CNN
+F 2 "" H 3200 3400 50  0001 C CNN
+F 3 "~" H 3200 3400 50  0001 C CNN
+	1    3200 3400
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3350 3650 6700 3650
+Wire Wire Line
+	4850 3400 5150 3400
+Wire Wire Line
+	4250 3400 4550 3400
+Wire Wire Line
+	5150 2600 5150 3400
+Wire Wire Line
+	2100 3650 2900 3650
+Wire Wire Line
+	2900 3650 2900 3400
+Wire Wire Line
+	2900 3400 3100 3400
+Connection ~ 2900 3650
+Wire Wire Line
+	2900 3650 3050 3650
+Wire Wire Line
+	3500 3400 3500 3450
+Wire Wire Line
+	3300 3400 3500 3400
+Connection ~ 5150 3400
+Wire Wire Line
+	4250 3400 4250 3450
+$EndSCHEMATC

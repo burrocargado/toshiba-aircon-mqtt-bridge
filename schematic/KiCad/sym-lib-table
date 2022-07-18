@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name Aircon_Library)(type Legacy)(uri ${KIPRJMOD}/Aircon_Library.lib)(options "")(descr ""))
+)
