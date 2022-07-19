@@ -145,7 +145,8 @@ void loop() {
     client.publish(RX_TOPIC, pkt, len);
     Serial.print("Message sent    [");
     Serial.print(RX_TOPIC);
-    Serial.print("] ");    for (int16_t i=0; i<len; i++){
+    Serial.print("] ");
+    for (int16_t i=0; i<len; i++){
       Serial.printf("%02X ", pkt[i]);
     }
     Serial.println();
