@@ -7,6 +7,7 @@
 #define DEEPSLEEP_US 20000000
 #define TX_TOPIC "aircon/packet/tx"
 #define RX_TOPIC "aircon/packet/rx"
+#define ERROR_TOPIC "aircon/packet/error"
 
 WiFiClientSecure espClient;
 PubSubClient client(espClient);
@@ -133,6 +134,7 @@ void loop() {
   int16_t len;
   uint8_t pkt[PACKET_LEN];
   enum packet_check res = sb;
+  const char *msg;
 
   if (!client.connected()) {
     reconnect();
@@ -150,6 +152,24 @@ void loop() {
     }
     Serial.println();
   } else if (res != sb) {
-    Serial.printf( "Packet error : %d\n", res );
+    switch (res){
+      case fe:
+        msg = "FE";
+        break;
+      case ce:
+        msg = "CE";
+        break;
+      case se:
+        msg = "SE";
+        break;
+      default:
+        msg = "NA";
+    }
+    client.publish(ERROR_TOPIC, msg);
+    Serial.printf( "Packet error : %s\n", msg );
+    Serial.print("Message sent    [");
+    Serial.print(ERROR_TOPIC);
+    Serial.print("] ");
+    Serial.println(msg);
   }
 }
