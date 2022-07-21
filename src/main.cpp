@@ -10,7 +10,6 @@
 
 WiFiClientSecure espClient;
 PubSubClient client(espClient);
-char msg[PACKET_LEN];
 
 void setup_wifi() {
   unsigned long count = 0;
