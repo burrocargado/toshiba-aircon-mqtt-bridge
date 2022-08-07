@@ -9,6 +9,9 @@
 #define RX_TOPIC "aircon/packet/rx"
 #define ERROR_TOPIC "aircon/packet/error"
 
+enum packet_check {ok, sb, fe, ce, se};
+// ok, stand-by, framing error, checksum error, size error
+
 WiFiClientSecure espClient;
 PubSubClient client(espClient);
 
@@ -94,9 +97,6 @@ void setup() {
   client.setCallback(callback);
   client.setBufferSize(CLIENT_BUFF_SIZE);
 }
-
-enum packet_check {ok, sb, fe, ce, se};
-// ok, stand-by, framing error, checksum error, size error
 
 void read_packet(uint8_t pkt[], int16_t &len, enum packet_check &res) {
   size_t length;
