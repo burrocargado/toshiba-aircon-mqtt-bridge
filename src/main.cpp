@@ -1,6 +1,7 @@
 #include <WiFiClientSecure.h>
 #include <PubSubClient.h>
 #include "credentials.h"
+#include "driver/uart.h"
 
 #define PACKET_LEN 256
 #define CLIENT_BUFF_SIZE 512
@@ -85,6 +86,7 @@ void setup() {
   Serial.begin(115200);
   Serial2.setTimeout(10);
   Serial2.begin(2400, SERIAL_8E1, 19, 18);
+  uart_set_mode(2, UART_MODE_RS485_HALF_DUPLEX);
   setup_wifi();
 
   //espClient.setInsecure();
