@@ -9,7 +9,7 @@
 #define RX_TOPIC "aircon/packet/rx"
 #define ERROR_TOPIC "aircon/packet/error"
 
-enum packet_check {ok, sb, fe, ce, se};
+enum packet_status {ok, sb, fe, ce, se};
 // ok, stand-by, framing error, checksum error, size error
 
 WiFiClientSecure espClient;
@@ -98,7 +98,7 @@ void setup() {
   client.setBufferSize(CLIENT_BUFF_SIZE);
 }
 
-void read_packet(uint8_t pkt[], int16_t &len, enum packet_check &res) {
+void read_packet(uint8_t pkt[], int16_t &len, enum packet_status &res) {
   size_t length;
   int16_t i;
   uint8_t csum = 0;
@@ -133,7 +133,7 @@ void read_packet(uint8_t pkt[], int16_t &len, enum packet_check &res) {
 void loop() {
   int16_t len;
   uint8_t pkt[PACKET_LEN];
-  enum packet_check res = sb;
+  enum packet_status res = sb;
   const char *msg;
 
   if (!client.connected()) {
