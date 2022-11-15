@@ -1,5 +1,6 @@
 #include <WiFiClientSecure.h>
 #include <PubSubClient.h>
+#include <ArduinoJson.h>
 #include "credentials.h"
 #include "driver/uart.h"
 
@@ -9,6 +10,7 @@
 #define TX_TOPIC "aircon/packet/tx"
 #define RX_TOPIC "aircon/packet/rx"
 #define ERROR_TOPIC "aircon/packet/error"
+#define CLIENT_TOPIC "aircon/client/bridge"
 
 enum packet_status {ok, sb, fe, ce, se};
 // ok, stand-by, framing error, checksum error, size error
@@ -61,6 +63,8 @@ void callback(char* topic, byte* payload, unsigned int length) {
 }
 
 void reconnect() {
+  StaticJsonDocument<32> doc;
+  char json[32];
   while (!client.connected()) {
     if (WiFi.status() != WL_CONNECTED) {
       esp_sleep_enable_timer_wakeup(DEEPSLEEP_US);
@@ -69,9 +73,14 @@ void reconnect() {
     Serial.print("Attempting MQTT connection...");
     String clientId = "ESP32Client-";
     clientId += String(random(0xffff), HEX);
-    if (client.connect(clientId.c_str(), mqtt_user, mqtt_pass)) {
+    doc["connection"] = "dead";
+    serializeJson(doc, json);
+    if (client.connect(clientId.c_str(), mqtt_user, mqtt_pass, CLIENT_TOPIC, 1, true, json)) {
       Serial.println("connected");
       client.subscribe(TX_TOPIC);
+      doc["connection"] = "alive";
+      serializeJson(doc, json);
+      client.publish(CLIENT_TOPIC, json, true);
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
